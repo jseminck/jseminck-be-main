@@ -24,7 +24,7 @@ export class ServerOverview extends React.Component {
             return (
               <div key={i} className="server-item">
                 {this.getIcon(server.state)}
-                <a href={`http://${server.name}.herokuapp.com`}>
+                <a href={`http://${server.heroku}.herokuapp.com`}>
                   {server.name}
                 </a>
                 &mdash;
