@@ -23,7 +23,13 @@ export class ServerOverview extends React.Component {
           {this.props.serverOverview.servers.map((server, i) => {
             return (
               <div key={i} className="server-item">
-                {this.getIcon(server.state)} {server.name} &mdash; {server.heroku} {this.getDelay(server.delay)}
+                {this.getIcon(server.state)}
+                <a href={`http://${server.name}.herokuapp.com`}>
+                  {server.name}
+                </a>
+                &mdash;
+                {server.heroku}
+                {this.getDelay(server.delay)}
               </div>
             );
           })}
