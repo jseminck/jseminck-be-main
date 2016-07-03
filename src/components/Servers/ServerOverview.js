@@ -50,18 +50,11 @@ export class ServerOverview extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    serverOverview: state.serverOverview
-  };
+  return {serverOverview: state.serverOverview};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
+  return {actions: bindActionCreators(actions, dispatch)};
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ServerOverview);
+export default connect(mapStateToProps, mapDispatchToProps)(ServerOverview);

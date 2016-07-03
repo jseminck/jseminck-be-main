@@ -1,22 +1,38 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from './loginActions';
+import LoginInput from './LoginInput';
+
 import './../../styles/login-page.scss';
 
-export default class LoginPage extends React.Component {
+class LoginPage extends React.Component {
+  static propTypes = {
+      login: PropTypes.object.isRequired,
+      actions: PropTypes.object.isRequired
+  }
+
   render() {
     return (
       <div className="login">
         <fieldset>
           <legend className="legend">Login</legend>
 
-          <div className="input">
-            <input type="email" placeholder="Email" required />
-            <span><i className="fa fa-envelope-o"></i></span>
-          </div>
+          <LoginInput
+            type="input"
+            placeholder="E-mail"
+            icon="fa-envelope-o"
+            onChange={this.props.actions.onChangeEmail}
+            value={this.props.login.email}
+          />
 
-          <div className="input">
-            <input type="password" placeholder="Password" required />
-            <span><i className="fa fa-lock"></i></span>
-          </div>
+          <LoginInput
+            type="password"
+            placeholder="Password"
+            icon="fa-lock"
+            onChange={this.props.actions.onChangePassword}
+            value={this.props.login.password}
+          />
 
           <button type="submit" className="submit">
             <i className="fa fa-long-arrow-right"></i>
@@ -27,3 +43,13 @@ export default class LoginPage extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {login: state.login};
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

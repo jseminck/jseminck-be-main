@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import {routerReducer} from 'react-router-redux';
-import serverReducer from './../components/Servers/serverReducer';
+import serverOverview from './../components/Servers/serverReducer';
+import login from './../components/Login/loginReducer';
 
 const rootReducer = combineReducers({
-  serverOverview: serverReducer,
+  serverOverview,
+  login,
   routing: routerReducer
 });
 

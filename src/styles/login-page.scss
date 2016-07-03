@@ -1,7 +1,7 @@
-$orange: #FF7052;
+$light-blue: #B1B3D2;
 
 .login {
-  border: 1px solid $orange;
+  border: 1px solid $light-blue;
   position: relative;
   top: 50%;
   width: 250px;
@@ -15,7 +15,7 @@ $orange: #FF7052;
   position: relative;
   width: 100%;
   display: block;
-  background: $orange;
+  background: $light-blue;
   padding: 15px;
   color: #fff;
   font-size: 20px;
@@ -44,10 +44,14 @@ $orange: #FF7052;
 .input span {
   position: absolute;
   display: block;
-  color: #d4d4d4;
+  color: $light-blue;
   left: 10px;
   top: 8px;
   font-size: 20px;
+
+  .fa-lock {
+    margin-left: 2px;
+  }
 }
 
 .input input {
@@ -56,14 +60,12 @@ $orange: #FF7052;
   display: block;
   border: 1px solid #EDEDED;
   border-radius: 4px;
-  transition: 0.2s ease-out;
   color: #a1a1a1;
 }
 
 .input input:focus {
-  padding: 10px 5px 10px 10px;
   outline: 0;
-  border-color: #FF7052;
+  border-color: $light-blue;
 }
 
 .submit {
@@ -73,8 +75,8 @@ $orange: #FF7052;
   margin: 0 auto -15px auto;
   background: #fff;
   border-radius: 100%;
-  border: 1px solid #FF7052;
-  color: #FF7052;
+  border: 1px solid $light-blue;
+  color: $light-blue;
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0px 0px 0px 7px #fff;
@@ -83,7 +85,7 @@ $orange: #FF7052;
 
 .submit:hover,
 .submit:focus {
-  background: #FF7052;
+  background: $light-blue;
   color: #fff;
   outline: 0;
 }
