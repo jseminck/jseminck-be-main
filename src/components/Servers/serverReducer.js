@@ -33,11 +33,8 @@ function modifyServerState(state, {server, responseTime}, newStateValue) {
     ...state,
     servers: state.servers.map(server => {
       if (server.name === server.name) {
-        console.log("state,currentTime", state.time);
-        console.log("moment().unix()", moment().unix());
-        console.log("state.time - moment().unix()", state.time - moment().unix());
         server.state = newStateValue;
-        server.delay = state.time - moment().unix();
+        server.delay = moment().unix() - state.time;
       }
       return server;
     })
