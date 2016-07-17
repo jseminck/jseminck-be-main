@@ -1,12 +1,18 @@
 language: node_js
 node_js:
-  - "6"
-  - "5"
-  - "5.1"
-  - "4"
-  - "4.2"
-  - "4.1"
-  - "4.0"
-after_success:
-  # Send coverage data to coveralls.
-  - npm run test:cover:travis
+- '5'
+install:
+- travis_retry npm install -g node-gyp
+- travis_retry npm install
+- sleep 15
+script:
+- travis_retry npm run prebuild
+- travis_retry npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: Ac7o6FEYGdsNaacCeH2lehtCOjLyzoE41UOeXfAtO6Xv8lVz3WVwZcrxmePn7wuxl8d8f6WK8A8tUrXFbm4LcGFTraeMbuZ+GgQ4lPLf50wZqWuLbu2Saz80pCyMLIWirgAqA5esLmmb75IyN34zZ0fcu8CwVl+b/03jI4p+AsnGldMGpLtI8iZGUVvXeZ3zAiZT1jdE3ga6y6lHoUwsx2MA9LvFgsfz3aIFvl8SWwCvJ6XSwH6LdF5FF/J2FK643skaW7QkcD5j+MQXNVIZTmaeUxh4uskboCXnq/v1uJbCBe5lQR9L4flrv5tiyoFB2Gf4eUKPsBQLxkPXtt5wk+rSd8fzyjbZpu4gLpyZKEUYwn3x93fg59q3PwASUj3ZZMkp8IaYFsZCdLO8CPIYFvB5r850br3I+NbHIWjsQbBYJETV2RtBG0LcyUgHvFgBvHch7tPU0h4WNpOACSvMLBGpXD/kJWn8a4Db8M2ZkscjiGiO7C+oxvt6feukE7WfbxoUCMT/Mw86Vz11cBILWGObrcZ+Vr3ihkWbjuRSyYLRGRxSaUJOMal1zrw6pJH+5uQ0BBM8kQ4nUxM+7DETcPR+XnSnfWz2gedxDoqwu4EMsDuP+p3lyJc7Ic4Doww0Hw0E/XiJHRsTqrXGuP/aQLRgDscbKXJb9d2xQz2pF3I=
+  app: jseminck-be-main
+  on:
+    repo: jseminck/jseminck-be-main
+  skip_cleanup: true
