@@ -15,3 +15,4 @@ deploy:
   app: mysterious-lake-70643
   on:
     repo: jseminck/jseminck-be-main
+  skip_cleanup: true
