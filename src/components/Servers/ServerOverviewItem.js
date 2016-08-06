@@ -14,10 +14,12 @@ export default class ServerOverviewItem extends React.Component {
                 </div>
                 <div className="server-item-info">
                     <div>
-                        {this.getIcon(this.props.server.state)}
                         <a href={`http://${this.props.server.heroku}.herokuapp.com`}>
                             {this.props.server.name}
                         </a>
+                    </div>
+                    <div>
+                        {this.getIcon(this.props.server.state)}
                         {this.getDelay()}
                     </div>
                 </div>
@@ -26,7 +28,7 @@ export default class ServerOverviewItem extends React.Component {
     }
 
     getFontAwesomeIcon() {
-        return `fa fa-4x fa-${this.props.server.faIcon}`;
+        return `fa fa-2x fa-${this.props.server.faIcon}`;
     }
 
     getIcon() {
