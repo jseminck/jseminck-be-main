@@ -31,12 +31,15 @@ function setCurrentTime(state) {
 function modifyServerState(state, {server, responseTime}, newStateValue) {
   return {
     ...state,
-    servers: state.servers.map(server => {
-      if (server.name === server.name) {
-        server.state = newStateValue;
-        server.delay = moment().unix() - state.time;
+    servers: state.servers.map(stateServer => {
+      if (server.name === stateServer.name) {
+        return {
+          ...stateServer,
+          state: newStateValue,
+          delay: moment().unix() - state.time
+        };
       }
-      return server;
+      return stateServer;
     })
   };
 }
