@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '5'
+addons:
+  ssh_known_hosts: jseminck.be
 install:
 - travis_retry npm install -g node-gyp
 - travis_retry npm install
@@ -8,11 +10,11 @@ install:
 script:
 - travis_retry npm run prebuild
 - travis_retry npm run build
-deploy:
-  provider: heroku
-  api_key:
-    secure: OoC7V2Rs8D+3ZaAWYnZArlARmuqC90pAVl0RQlxOaTGjjhLxoHB8nfNC/UGS0fpy/02AKJHcZeBvC5jQYl0Cjm6PQEQTuaO0GngQMenO9Jn48moKsl1lFcMy2pm84eiwfazCVscA6s53guX69tfxpzCznFrLlyqrpeqzxaiqAVxTkA1++5MAxo+I4P4l/Enmpc4dKamATqOWP0iZNiiDjTM6gGPgG8SAyYEzJdUjUdnQR1cUNYXNivg3W0291kPt+JNxHmXl1fKsLWqb9wmI+t/ZBSU+DO0kTV/JAIfuI1dQXjxL4oO0/1CNtBov4TtMho09AozBr1o0g0ufaZ7T+IWVPBu6s+O0HciBKXDZaO9PCQuCHBSSRKl6PPLPq93MJU/EAgJ/L7+UFwLbc0dUkPbB/pJUWMCN+HMWj+NP1CUpuaSvdcdP9ak0RgP3bBxhun5svf04P9fxgDysj1Xn+53RZKeQPHxfXvtRoppO6n2k5bt0ijTi2jqcSzklTCKYfi1TTk8CpwWx01vRpekqerPWQOS2XiS52QttzTDWW4NbP9baz6E5K3hvo6JSBQJ/+g0G4APBZwgmILuyIsJshX+H2Sx37MkwYt1yMSSKMtKsJuwNgB1825z8AhzbjmINaI6sQBlPhusZxLvwwlOZD0UGclVYGgmuj0j2xsnvIqg=
-  app: mysterious-lake-70643
-  on:
-    repo: jseminck/jseminck-be-main
-  skip_cleanup: true
+after_success:
+- chmod 600 deploy-key
+- mv deploy-key ~/.ssh/id_rsa
+- tar -czf package.tgz build
+- sshpass -e scp package.tgz deploy@jseminck.be
+before_install:
+- openssl aes-256-cbc -K $encrypted_37c42d1fc8f1_key -iv $encrypted_37c42d1fc8f1_iv
+  -in deploy-key.enc -out deploy-key -d
