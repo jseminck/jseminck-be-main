@@ -14,7 +14,7 @@ after_success:
 - chmod 600 deploy-key
 - mv deploy-key ~/.ssh/id_rsa
 - tar -czf package.tgz build
-- sshpass -e scp package.tgz deploy@jseminck.be
+- sshpass -e scp package.tgz deploy@jseminck.be:/home/apps/
 before_install:
 - openssl aes-256-cbc -K $encrypted_37c42d1fc8f1_key -iv $encrypted_37c42d1fc8f1_iv
   -in deploy-key.enc -out deploy-key -d
