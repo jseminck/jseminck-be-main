@@ -14,8 +14,8 @@ after_success:
 - chmod 600 deploy-key
 - mv deploy-key ~/.ssh/id_rsa
 - tar -czf jseminck-be-main.tgz .
-- rm -rf ./src
-- rm -rf ./node_modules
+- rm -rf src/
+- rm -rf node_modules/
 - scp jseminck-be-main.tgz deploy@95.85.25.10:/home/apps/
 - scp deploy.sh deploy@95.85.25.10:/home/apps/
 - ssh deploy@95.85.25.10 '/home/apps/deploy.sh'
