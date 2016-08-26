@@ -17,9 +17,7 @@ after_success:
 - rm -rf node_modules/
 - tar -czf jseminck-be-main.tgz .
 - scp jseminck-be-main.tgz deploy@95.85.25.10:/home/apps/
-- scp deploy.sh deploy@95.85.25.10:/home/apps/
-- ssh deploy@95.85.25.10 'chmod +x /home/apps/deploy.sh'
-- ssh deploy@95.85.25.10 '/home/apps/deploy.sh'
+- ssh deploy@95.85.25.10 'source ~/.bash_profile && cd /home/apps/ && ./deploy.sh jseminck-be-main'
 before_install:
 - openssl aes-256-cbc -K $encrypted_37c42d1fc8f1_key -iv $encrypted_37c42d1fc8f1_iv
   -in deploy-key.enc -out deploy-key -d

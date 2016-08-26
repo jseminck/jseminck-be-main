@@ -12,7 +12,7 @@ export function onSetCurrentTime() {
 }
 
 function fetchPingServer(server) {
-    const url = `http://${server.heroku}.herokuapp.com/api/ping`;
+    const url = `http://${server.link}/api/ping`;
     return fetch(url).then(response => response.json());
 }
 

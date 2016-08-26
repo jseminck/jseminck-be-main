@@ -14,7 +14,7 @@ export default class ServerOverviewItem extends React.Component {
                 </div>
                 <div className="server-item-info">
                     <div>
-                        <a href={`http://${this.props.server.heroku}.herokuapp.com`}>
+                        <a href={`http://${this.props.server.link}`}>
                             {this.props.server.name}
                         </a>
                     </div>
