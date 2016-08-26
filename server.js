@@ -7,4 +7,4 @@ app.use(express.static('dist'));
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
 app.listen(port);
-console.log("Server running at http://127.0.0.1:" + port); // eslint-disable-line no-console
+console.log("Server running at http://127.0.0.1:" + 1234); // eslint-disable-line no-console
