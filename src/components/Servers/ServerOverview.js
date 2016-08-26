@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './serverActions';
 import ServerOverviewItem from './ServerOverviewItem';
-import './ServerOverview.css';
+import styles from './ServerOverview.css';
 
 export class ServerOverview extends React.Component {
   static propTypes = {
@@ -19,7 +19,7 @@ export class ServerOverview extends React.Component {
 
   render() {
     return (
-      <div className="server-container">
+      <div className={styles.container}>
           {this.props.serverOverview.servers.map((server, i) => {
             return <ServerOverviewItem key={i} server={server} />;
           })}

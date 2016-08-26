@@ -1,20 +1,20 @@
-.server-item-container {
+.container {
     display: flex;
 
     margin: 5px;
     border: 1px solid black;
 }
 
-.server-status {
+.status {
     width: 20px;
 }
 
-.server-icon i {
+.icon {
     padding: 15px;
     width: 75px;
 }
 
-.server-name {
+.name {
     display: flex;
     justify-content: center;
     align-items: center;

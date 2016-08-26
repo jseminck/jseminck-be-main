@@ -1,18 +1,18 @@
 import React from "react";
 import { Link, IndexLink } from 'react-router';
-import './Navigation.css'
+import styles from './Navigation.scss';
 
 const Navigation = () => (
-  <div className="navigation">
-      <IndexLink className="navigation-item" to="/">
+  <div className={styles.container}>
+      <IndexLink className={styles.item} to="/">
           Home
       </IndexLink>
       {' | '}
-      <Link className="navigation-item" to="/servers">
+      <Link className={styles.item} to="/servers">
           Servers
       </Link>
       {' | '}
-      <Link className="navigation-item" to="/login">
+      <Link className={styles.item} to="/login">
           Login
       </Link>
   </div>

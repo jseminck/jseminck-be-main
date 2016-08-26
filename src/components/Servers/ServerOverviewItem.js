@@ -1,5 +1,5 @@
 import React from "react";
-import './ServerOverviewItem.css';
+import styles from './ServerOverviewItem.css';
 
 export default class ServerOverviewItem extends React.Component {
     static propTypes = {
@@ -8,12 +8,12 @@ export default class ServerOverviewItem extends React.Component {
 
     render() {
         return (
-            <div className="server-item-container">
-                <div className="server-status" style={{backgroundColor: this.getBackgroundColor()}}></div>
-                <div className="server-icon">
+            <div className={styles.container}>
+                <div className={styles.status} style={{backgroundColor: this.getBackgroundColor()}}></div>
+                <div className={styles.icon}>
                     <i className={this.getFontAwesomeIcon()} />
                 </div>
-                <div className="server-name">
+                <div className={styles.name}>
                     <a href={`http://${this.props.server.link}`}>
                         {this.props.server.name}
                     </a>
