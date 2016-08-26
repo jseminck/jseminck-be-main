@@ -1,16 +1,9 @@
 .server-container {
-  margin-top: 100px;
+  margin-top: 50px;
 
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-@keyframes spin {
-  100%
-  {
-    transform:rotate(360deg);
-  }
 }

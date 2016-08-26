@@ -1,41 +1,22 @@
-.server-item {
+.server-item-container {
+    display: flex;
+
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.server-status {
+    width: 20px;
+}
+
+.server-icon i {
+    padding: 15px;
+    width: 75px;
+}
+
+.server-name {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
-    margin: 10px;
-    border: 1px solid black;
-    padding: 10px;
-
-    /* Keeps three per row */
-    width: calc(100% * (1/4) - 100px - 1px);
-}
-
-.server-item-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-top: 5px;
-}
-
-.server-item-info-icon {
-    margin-right: 5;
-}
-
-.online-icon {
-  width: 12px;
-  height: 12px;
-}
-
-.offline-icon {
-  width: 12px;
-  height: 12px;
-}
-
-.loading-icon {
-  width: 12px;
-  height: 12px;
-  animation: spin 2s linear infinite;
+    width: 150px;
 }
