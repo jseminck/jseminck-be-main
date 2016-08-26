@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Navigation from "./Navigation";
-import './../styles/App.css';
 
 const App = (props) => {
   return (
