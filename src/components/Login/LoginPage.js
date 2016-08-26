@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as actions from './loginActions';
 import LoginInput from './LoginInput';
 
-import './../../styles/login-page.scss';
+import './LoginPage.scss';
 
 class LoginPage extends React.Component {
   static propTypes = {
