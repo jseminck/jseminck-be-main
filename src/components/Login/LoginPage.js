@@ -6,7 +6,7 @@ import LoginInput from './LoginInput';
 
 import './LoginPage.scss';
 
-class LoginPage extends React.Component {
+export class LoginPage extends React.Component {
   static propTypes = {
       login: PropTypes.object.isRequired,
       actions: PropTypes.object.isRequired
@@ -53,3 +53,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+

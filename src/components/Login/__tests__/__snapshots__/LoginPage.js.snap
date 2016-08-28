@@ -1,0 +1,43 @@
+exports[`LoginPage renders correctly 1`] = `
+<div
+  className="login">
+  <fieldset>
+    <legend
+      className="legend">
+      Login
+    </legend>
+    <div
+      className="input">
+      <input
+        onChange={[Function onChangeEmail]}
+        placeholder="E-mail"
+        required={true}
+        type="input"
+        value={undefined} />
+      <span>
+        <i
+          className="fa fa-envelope-o" />
+      </span>
+    </div>
+    <div
+      className="input">
+      <input
+        onChange={undefined}
+        placeholder="Password"
+        required={true}
+        type="password"
+        value="myPassword" />
+      <span>
+        <i
+          className="fa fa-lock" />
+      </span>
+    </div>
+    <button
+      className="submit"
+      type="submit">
+      <i
+        className="fa fa-long-arrow-right" />
+    </button>
+  </fieldset>
+</div>
+`;
