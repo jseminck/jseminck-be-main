@@ -1,23 +1,23 @@
 exports[`App renders correctly 1`] = `
 <div>
   <div
-    className={undefined}>
+    className="container">
     <a
-      className={undefined}
+      className="item"
       onClick={[Function bound handleClick]}
       style={Object {}}>
       Home
     </a>
      | 
     <a
-      className={undefined}
+      className="item"
       onClick={[Function bound handleClick]}
       style={Object {}}>
       Servers
     </a>
      | 
     <a
-      className={undefined}
+      className="item"
       onClick={[Function bound handleClick]}
       style={Object {}}>
       Login
