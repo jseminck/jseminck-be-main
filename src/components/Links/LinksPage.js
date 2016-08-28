@@ -19,7 +19,7 @@ export class LinksPage extends React.Component {
             <div>
                 Hello World
             </div>
-        )
+        );
     }
 }
 
