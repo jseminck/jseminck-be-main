@@ -1,5 +1,5 @@
 import _ from "lodash";
-import getServerList from './../../utils/getServerList';
+import getServerList from './../getServerList';
 
 describe("getServerList()", function() {
     it("returns 5 objects", function() {

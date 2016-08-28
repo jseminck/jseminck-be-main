@@ -1,0 +1,30 @@
+exports[`App renders correctly 1`] = `
+<div>
+  <div
+    className={undefined}>
+    <a
+      className={undefined}
+      onClick={[Function bound handleClick]}
+      style={Object {}}>
+      Home
+    </a>
+     | 
+    <a
+      className={undefined}
+      onClick={[Function bound handleClick]}
+      style={Object {}}>
+      Servers
+    </a>
+     | 
+    <a
+      className={undefined}
+      onClick={[Function bound handleClick]}
+      style={Object {}}>
+      Login
+    </a>
+  </div>
+  <div>
+    Hello World
+  </div>
+</div>
+`;
