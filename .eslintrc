@@ -18,7 +18,8 @@
     "browser": true,
     "node": true,
     "jquery": true,
-    "mocha": true
+    "mocha": true,
+    "jasmine": true
   },
   "rules": {
     "strict": 0,
