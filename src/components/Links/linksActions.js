@@ -4,7 +4,7 @@ export function onLoad() {
             (json) => dispatch(onDataLoadSuccess(json)),
             () => dispatch(onDataLoadFailed())
         );
-    }
+    };
 }
 
 function onDataLoadSuccess(links) {

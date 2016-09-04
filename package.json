@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Overview to keep track of microservices running behind jseminck.be",
   "scripts": {
-    "dev": "npm-run-all --parallel test:watch open:src lint:watch",
+    "dev": "npm-run-all --parallel open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node totools/distServer.js",
     "lint": "esw webpack.config.* src tools",
