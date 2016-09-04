@@ -12,6 +12,8 @@ export default function serverReducer(state = initialState, action) {
             return onDataLoadError(state);
         case 'translations.next':
             return onNext(state);
+        case 'translations.show':
+            return onShow(state);
         default:
             return state;
     }
@@ -34,9 +36,16 @@ function onDataLoadError(state) {
 }
 
 function onNext(state) {
-    console.log("onNext");
     return {
         ...state,
+        show: false,
         index: state.index + 1
+    };
+}
+
+function onShow(state) {
+    return {
+        ...state,
+        show: true
     };
 }

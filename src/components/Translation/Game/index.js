@@ -10,6 +10,7 @@ export class Game extends React.Component {
     static propTypes = {
         translations: React.PropTypes.array.isRequired,
         index: React.PropTypes.number.isRequired,
+        show: React.PropTypes.bool,
 
         actions: React.PropTypes.object.isRequired
     };
@@ -25,6 +26,10 @@ export class Game extends React.Component {
             <div className={styles.container}>
                 <h2>{current.translation}</h2>
 
+                <div className={styles.show}>
+                    {this.props.show && current.english}
+                </div>
+
                 <Buttons {...this.props.actions} />
             </div>
         );
@@ -35,6 +40,7 @@ function mapStateToProps(state) {
     return {
         translations: state.translation.translations,
         index: state.translation.index,
+        show: state.translation.show,
         error: state.translation.error
     };
 }

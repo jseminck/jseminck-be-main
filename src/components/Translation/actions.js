@@ -8,18 +8,22 @@ export function onNewGame() {
 }
 
 function onDataLoadSuccess(translations) {
-    return {type: "translations.data.load.success", translations};
+    return {type: 'translations.data.load.success', translations};
 }
 
 function onDataLoadError(translations) {
-    return {type: "translations.data.load.error", translations};
+    return {type: 'translations.data.load.error', translations};
 }
 
 function fetchStartNewGame() {
-    const url = "http://translation.jseminck.be/api/game/start?language=Estonian";
+    const url = 'http://translation.jseminck.be/api/game/start?language=Estonian';
     return fetch(url).then(response => response.json());
 }
 
 export function onNext() {
-    return {type: "translations.next"};
+    return {type: 'translations.next'};
+}
+
+export function onShow() {
+    return {type: 'translations.show'};
 }
