@@ -15,7 +15,8 @@
     "build": "babel-node tools/build.js",
     "start": "forever start -a -l forever.log -o out.log -e err.log serverjs",
     "stop": "forever stop dist/index.js",
-    "test": "node --harmony_proxies node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "node --harmony_proxies node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:u": "node --harmony_proxies node_modules/.bin/jest -u"
   },
   "author": "Joachim Seminck",
   "license": "MIT",

@@ -45,4 +45,19 @@ describe('Game', function() {
 
         expect(app).toMatchSnapshot();
     });
+
+    it('renders correctly with show', () => {
+        const app = renderer.create(
+          <Game
+              translations={[{translation: 'myTranslation', english: 'myEnglish'}]}
+              index={0}
+              show={true}
+              actions={{
+                onNewGame: () => {}
+              }}
+          />
+        ).toJSON();
+
+        expect(app).toMatchSnapshot();
+    });
 });
