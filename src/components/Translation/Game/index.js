@@ -5,28 +5,34 @@ import * as actions from './../actions';
 
 export class Game extends React.Component {
     static propTypes = {
-        onNewGame: React.PropTypes.func.isRequired
+        translations: React.PropTypes.array.isRequired,
+
+        actions: React.PropTypes.object.isRequired
     };
 
     componentDidMount() {
-        this.props.onNewGame();
+        this.props.actions.onNewGame();
     }
 
     render() {
         return (
             <div>
-                Hello World
+                {this.props.translations.map(translation => <p key={translation.id}>{translation.english}</p>)}
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-  return {state: state.tranlation};
+    console.log("state", state);
+    return {
+        translations: state.translation.translations,
+        error: state.translation.error
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(actions, dispatch)};
+    return {actions: bindActionCreators(actions, dispatch)};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
