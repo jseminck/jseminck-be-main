@@ -12,6 +12,10 @@ const Navigation = () => (
           Servers
       </Link>
       {' | '}
+      <Link className={styles.item} to="/translations">
+          Translations
+      </Link>
+      {' | '}
       <Link className={styles.item} to="/login">
           Login
       </Link>
