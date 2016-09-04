@@ -1,4 +1,4 @@
-import React from "React";
+import React from 'React';
 import styles from './Buttons.scss';
 
 export default ({onShow, onNext}) => (

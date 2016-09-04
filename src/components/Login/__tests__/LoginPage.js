@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from 'react-test-renderer';
-import {LoginPage} from "./../../Login";
+import {LoginPage} from "./../Index";
 
 describe("LoginPage", function() {
     it('renders correctly', () => {

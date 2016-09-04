@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from 'react-test-renderer';
-import {ServerOverview} from "./../../Servers";
+import {ServerOverview} from "./../Index";
 
 describe("ServerOverview", function() {
     it('renders correctly', () => {
