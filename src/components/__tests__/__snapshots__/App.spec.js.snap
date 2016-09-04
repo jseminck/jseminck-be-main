@@ -20,6 +20,13 @@ exports[`App renders correctly 1`] = `
       className="item"
       onClick={[Function bound handleClick]}
       style={Object {}}>
+      Translations
+    </a>
+     | 
+    <a
+      className="item"
+      onClick={[Function bound handleClick]}
+      style={Object {}}>
       Login
     </a>
   </div>

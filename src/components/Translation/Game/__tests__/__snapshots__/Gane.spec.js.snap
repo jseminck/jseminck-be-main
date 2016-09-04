@@ -1,0 +1,63 @@
+exports[`Game renders correctly with data 1`] = `
+<div
+  className="container">
+  <h2>
+    myTranslation
+  </h2>
+  <div
+    className="buttons">
+    <button
+      className="showButton"
+      onClick={[Function onClick]}>
+      Show
+    </button>
+    <button
+      className="nextButton"
+      onClick={[Function onClick]}>
+      Next
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Game renders correctly with error 1`] = `
+<div
+  className="container">
+  <h2>
+    myTranslation
+  </h2>
+  <div
+    className="buttons">
+    <button
+      className="showButton"
+      onClick={[Function onClick]}>
+      Show
+    </button>
+    <button
+      className="nextButton"
+      onClick={[Function onClick]}>
+      Next
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Game renders correctly without data 1`] = `
+<div
+  className="container">
+  <h2 />
+  <div
+    className="buttons">
+    <button
+      className="showButton"
+      onClick={[Function onClick]}>
+      Show
+    </button>
+    <button
+      className="nextButton"
+      onClick={[Function onClick]}>
+      Next
+    </button>
+  </div>
+</div>
+`;
