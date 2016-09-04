@@ -2,6 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './../actions';
+import styles from './Index.scss';
+
+import Buttons from './Buttons';
 
 export class Game extends React.Component {
     static propTypes = {
@@ -19,16 +22,16 @@ export class Game extends React.Component {
         const current = this.props.translations[this.props.index] || {};
 
         return (
-            <div>
-                {current.translation}
-                <button onClick={() => this.props.actions.onNext()}>Next</button>
+            <div className={styles.container}>
+                <h2>{current.translation}</h2>
+
+                <Buttons {...this.props.actions} />
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    console.log("state", state);
     return {
         translations: state.translation.translations,
         index: state.translation.index,

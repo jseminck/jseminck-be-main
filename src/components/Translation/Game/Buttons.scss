@@ -1,0 +1,26 @@
+$red: #F88379;
+$green: #71BC78;
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.showButton {
+    composes: button;
+    background: $red;
+}
+
+.nextButton {
+    composes: button;
+    background: $green;
+}
