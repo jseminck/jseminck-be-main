@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions';
@@ -7,8 +7,8 @@ import styles from './Index.css';
 
 export class ServerOverview extends React.Component {
   static propTypes = {
-    actions: PropTypes.object.isRequired,
-    serverOverview: PropTypes.object.isRequired
+    actions: React.PropTypes.object.isRequired,
+    serverOverview: React.PropTypes.object.isRequired
   };
 
   componentDidMount() {
