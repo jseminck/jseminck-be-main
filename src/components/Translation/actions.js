@@ -19,3 +19,7 @@ function fetchStartNewGame() {
     const url = "http://translation.jseminck.be/api/game/start?language=Estonian";
     return fetch(url).then(response => response.json());
 }
+
+export function onNext() {
+    return {type: "translations.next"};
+}

@@ -1,5 +1,6 @@
 const initialState = {
     translations: [],
+    index: 0,
     error: false
 };
 
@@ -9,6 +10,8 @@ export default function serverReducer(state = initialState, action) {
             return onDataLoadSuccess(state, action.translations);
         case 'translations.data.load.error':
             return onDataLoadError(state);
+        case 'translations.next':
+            return onNext(state);
         default:
             return state;
     }
@@ -18,6 +21,7 @@ function onDataLoadSuccess(state, translations) {
     return {
         ...state,
         error: false,
+        index: 0,
         translations
     };
 }
@@ -26,5 +30,13 @@ function onDataLoadError(state) {
     return {
         ...state,
         error: true
+    };
+}
+
+function onNext(state) {
+    console.log("onNext");
+    return {
+        ...state,
+        index: state.index + 1
     };
 }

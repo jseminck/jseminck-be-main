@@ -6,6 +6,7 @@ import * as actions from './../actions';
 export class Game extends React.Component {
     static propTypes = {
         translations: React.PropTypes.array.isRequired,
+        index: React.PropTypes.number.isRequired,
 
         actions: React.PropTypes.object.isRequired
     };
@@ -15,9 +16,12 @@ export class Game extends React.Component {
     }
 
     render() {
+        const current = this.props.translations[this.props.index] || {};
+
         return (
             <div>
-                {this.props.translations.map(translation => <p key={translation.id}>{translation.english}</p>)}
+                {current.translation}
+                <button onClick={() => this.props.actions.onNext()}>Next</button>
             </div>
         );
     }
@@ -27,6 +31,7 @@ function mapStateToProps(state) {
     console.log("state", state);
     return {
         translations: state.translation.translations,
+        index: state.translation.index,
         error: state.translation.error
     };
 }
