@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as actions from './serverActions';
+import * as actions from './actions';
 import ServerOverviewItem from './ServerOverviewItem';
-import styles from './ServerOverview.css';
+import styles from './Index.css';
 
 export class ServerOverview extends React.Component {
   static propTypes = {

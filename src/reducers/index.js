@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import {routerReducer} from 'react-router-redux';
-import serverOverview from './../components/Servers/serverReducer';
-import links from './../components/Links/linksReducer';
-import login from './../components/Login/loginReducer';
+import serverOverview from './../components/Servers/reducer';
+import links from './../components/Links/reducer';
+import login from './../components/Login/reducer';
 
 const rootReducer = combineReducers({
     links,

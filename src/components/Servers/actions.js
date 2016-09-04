@@ -20,7 +20,6 @@ function onServerOnline(server, responseTime) {
     return {type: "server.online", server: server, responseTime: responseTime};
 }
 
-
 function onServerOffline(server, responseTime) {
     return {type: "server.offline", server: server, responseTime: responseTime};
 }
